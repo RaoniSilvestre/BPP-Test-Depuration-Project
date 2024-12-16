@@ -1,4 +1,4 @@
-package br.ufrn.imd;
+package br.ufrn.imd.view;
 
 import br.ufrn.imd.model.Catalogo;
 import br.ufrn.imd.model.Pedido;
@@ -28,10 +28,10 @@ public class Main {
         Pedido pedido = new Pedido("Jorge Amado");
         logger.info("Pedido do " + pedido.getClienteComprador() + " inicializado");
 
-        pedido.adicionarProduto(produto1);
+        catalogo.buscarProdutoPorId(1).ifPresent(pedido::adicionarProduto);
         logger.info("Produto " + produto1.getNome() + " adicionado ao carrinho de " + pedido.getClienteComprador());
 
-        pedido.adicionarProduto(produto2);
+        catalogo.buscarProdutoPorId(2).ifPresent(pedido::adicionarProduto);
         logger.info("Produto " + produto2.getNome() + " adicionado ao carrinho de " + pedido.getClienteComprador());
 
         logger.info("Total do pedido com desconto de 10%: " + pedido.calcularTotal());

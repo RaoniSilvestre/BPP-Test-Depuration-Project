@@ -8,7 +8,7 @@ class PedidoTest {
 
     @Test
     void calcularTotalSemDesconto() {
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido("Jorge Amado");
         Produto produto0 = new Produto(0, "Caderno", 19.99);
 
         pedido.adicionarProduto(produto0);
@@ -18,7 +18,7 @@ class PedidoTest {
 
     @Test
     void calcularTotalComDesconto() {
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido("Pedro da roça");
 
         Produto produto1 = new Produto(1, "Geladeira", 1899.99);
         Produto produto2 = new Produto(2, "Freezer", 899.99);
